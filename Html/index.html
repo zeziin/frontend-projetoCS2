@@ -3,45 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Land-page</title>
+    <title>CSExpertise</title>
     <link rel="stylesheet" href="/Styles/style-index.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="menu">
-                <a href="#">Matches</a>
-                <a href="#">Results</a>
-                
-                <div class="dropdown">
-                    <a href="#">Events</a>
-                    <div class="submenu">
-                        <a href="#">All events</a>
-                        <a href="#">Ongoing</a>
-                        <a href="#">Archive</a>
-                        <a href="#">Calendar</a>
-                        <a href="#">VRS Invites</a>
-                        <a href="#"><span class="badge">LIVE</span> Austin Major St. 1</a>
-                        <a href="#">Austin Major St. 2</a>
+            <div class="nav-container">
+                <div class="nav-left">
+                    <img src="/Imagens/logo.jpg" alt="Logo">
+                </div>
+
+                <div class="nav-center">
+                    <div class="menu-itens">
+                        <a href="#">Matches</a>
+                        <a href="#">Results</a>
+
+                        <div class="dropdown">
+                            <a href="#">Events</a>
+                            <div class="submenu">
+                                <a href="#">All events</a>
+                                <a href="#">Ongoing</a>
+                                <a href="#">Archive</a>
+                                <a href="#">Calendar</a>
+                                <a href="#">VRS Invites</a>
+                                <a href="#"><span class="badge">LIVE</span> Austin Major St. 1</a>
+                                <a href="#">Austin Major St. 2</a>
+                            </div>
+                        </div>
+
+                        <a href="#">Teams</a>
+                        <a href="#">View your status</a>
                     </div>
                 </div>
 
-                <a href="#">Teams</a>
-                <a href="#">View your status</a>
-                <div id="divBusca">
-                    <input type="text" name="busca" id="txtBusca" placeholder="Buscar...">
-                    <button id="btnBusca" type="button">
-                        <img src="/Imagens/busca1.png" alt="Buscar">
-                    </button>
+                <div class="itens">
+                    <div id="divBusca">
+                        <input type="text" name="busca" id="txtBusca" placeholder="Buscar...">
+                        <button id="btnBusca" type="button">
+                            <img src="/Imagens/busca1.png" alt="Buscar">
+                        </button>
+                    </div>
+                    <a href="/Html/login.html">Login</a>
                 </div>
-                <a href="/Html/login.html">Login</a>
             </div>
         </nav>
     </header>
     <main>
-        <img src="/Imagens/banner.png" alt="Banner">
-        <h1>Estatísticas das suas partidas no Counter Strike 2</h1>
-        <P>Entre com a Steam para acompanhar automaticamente suas estatísticas no CS2 e histórico de partidas.</P>
+        <div class="container">
+            <div class="texto">
+                <h1>Estatísticas das suas partidas no Counter Strike 2</h1>
+                <P>Entre com a Steam para acompanhar automaticamente suas estatísticas no CS2 e histórico de partidas.</P>
+                <button id="btnSteam" type="button">
+                    <img src="/Imagens/steam.png" alt="Steam">
+                    Entre pela Steam
+                </button>
+            </div>
+        </div>
     </main>
     <footer>
         <p>José Benevides & Murilo Amaral - &copy;</p>
