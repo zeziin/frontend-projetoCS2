@@ -5,8 +5,11 @@
     box-sizing: border-box;
 }
 
+*:focus {
+    outline: none;
+}
+
 body {
-    background-color: #121212;
     color: white;
 }
 
@@ -23,20 +26,12 @@ nav {
     justify-content: space-between;
 }
 
-.menu {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex: 1;
-}
-
 .nav-container img {
     width: 65px;
     height: 35px;
     margin-right: 20px;
 }
 
-/* MENU CENTRAL */
 .menu-itens {
     display: flex;
     gap: 20px;
@@ -49,13 +44,6 @@ nav {
 
 .menu-itens a:hover {
     color: orange;
-}
-
-.dropdown > a {
-    color: #ccc;
-    text-decoration: none;
-    font-weight: bold;
-    position: relative;
 }
 
 .menu-itens > a, .itens > a {
@@ -73,6 +61,32 @@ nav {
     position: relative;
 }
 
+.dropdown > a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+}
+
+.dropdown > a::after {
+    content: "▶";
+    font-size: 10px;
+    margin-left: 5px;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover > a::after {
+    content: "▼";
+    transform: rotate(0);
+}
+
+.dropdown:hover .submenu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
 .submenu {
     display: none;
     position: absolute;
@@ -83,12 +97,6 @@ nav {
     border-radius: 4px;
     z-index: 10;
     min-width: 180px;
-}
-
-.dropdown:hover .submenu {
-    display: block;
-    opacity: 1;
-    visibility: visible;
 }
 
 .submenu a {
@@ -115,19 +123,6 @@ nav {
     border-radius: 4px;
     font-size: 10px;
     margin-right: 5px;
-}
-
-.dropdown > a::after {
-    content: "▶";
-    font-size: 10px;
-    margin-left: 5px;
-    vertical-align: middle;
-    transition: transform 0.3s ease;
-}
-
-.dropdown:hover > a::after {
-    content: "▼";
-    transform: rotate(0);
 }
 
 /* BUSCA + LOGIN À DIREITA */
@@ -177,7 +172,42 @@ nav {
 }
 
 main {
-    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 120px);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9)), url(/Imagens/banner.png);
+    background-size: cover;         /* Faz a imagem cobrir todo o espaço */
+    background-repeat: no-repeat;   /* Impede repetição */
+    background-position: center;    /* Centraliza a imagem */
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #363636;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.form-login label, button {
+    font-weight: bold;
+}
+
+.username:hover, .password:hover, button:hover {
+    color: orange;
+}
+
+.password input {
+    margin-left: 2px;
+}
+
+form button {
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 footer {
@@ -191,56 +221,4 @@ footer {
     position: fixed;
     bottom: 0;
     left: 0;
-}
-
-*:focus {
-    outline: none;
-}
-
-.container {
-  position: relative;
-  height: 500px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.9)), url('/Imagens/banner.png');
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.texto {
-  color: white;
-  max-width: 600px;
-}
-
-.texto p {
-    opacity: 50%;
-}
-
-#btnSteam {
-    background-color: #363636;
-    color: white;
-    border: none;
-    width: 200px;
-    height: 40px;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 35px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: background-color 0.3s ease;
-    margin: 20px auto;
-}
-
-#btnSteam:hover {
-    background-color: #252525;
-}
-
-#btnSteam img {
-    width: 24px;
-    height: 24px;
 }
